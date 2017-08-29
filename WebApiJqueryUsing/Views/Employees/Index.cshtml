@@ -1,0 +1,137 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Employees</h2>
+<hr />
+<div class="row">
+
+    <div class="col-md-6">
+        <div class="panel panel-success">
+            <div class="panel-heading">
+                <h4 class="panel-title">Create New Employee</h4>
+            </div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-horizontal">
+                            <div class="form-group">
+                                <label for="name" class="control-label col-md-2">İsim</label>
+                                <div class="col-md-10">
+                                    @Html.TextBox("name", "", new { @class = "form-control", placeholder = "Employee Name..." })
+                                </div>                            
+                            </div>
+                            <div class="form-group">
+                                <label for="surname" class="control-label col-md-2">Soyisim</label>
+                                <div class="col-md-10">
+                                    @Html.TextBox("surname", "", new { @class = "form-control", placeholder = "Employee SurName..." })
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="gender" class="control-label col-md-2">Cinsiyet</label>
+                                <div class="col-md-10">
+                                    @Html.DropDownList("gender",
+                                        new SelectListItem[]
+                                        {
+                                            new SelectListItem() {Text="Male",Value="male" },
+                                            new SelectListItem() {Text="Female",Value="female" },
+                                        },"Cinsiyet seçim...",new { @class="form-control"})
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="salary" class="control-label col-md-2">Maaş</label>
+                                <div class="col-md-10">
+                                    @Html.TextBox("salary","", new { @class = "form-control", placeholder = "Maaş", type="number" })
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="panel-footer">
+                <button type="button" id="btnCreate" class="btn btn-success">Create</button>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <ul id="employeeList" class="list-group">
+            
+        </ul>
+    </div>
+
+</div>
+
+<script>
+    function LoadEmployees() {
+        var ul = $("#employeeList");
+        ul.empty();
+
+        $.ajax({
+            method: "GET",
+            url:"../api/employee",
+        }).done(function (response) {
+            //console.log(response);
+            if (response == null)
+                return;
+            for (var i = 0; i < response.length; i++)
+            {   
+                var emp = response[i];
+                var li = $("<li class='list-group-item'>" + emp.Name + " " + emp.Surname + " (Gender:" + emp.Gender + "- Salary" + emp.Salary + "$)</li>");
+                ul.append(li);
+            }           
+        }).fail(function () {
+            alert("Veriler çekilirken bir hata oluştu.");
+        });
+    }
+
+    function CreateEmployee() {
+        var name = $("#name").val();
+        var surname = $("#surname").val();
+        var gender = $("#gender").val();
+        var salary = $("#salary").val();
+
+        var emp = { 
+            "name": name,
+            "surname": surname,
+            "gender": gender,
+            "salary":salary,
+        }; // bi obje oluşturduk ve bu objeyi api'ye göndericez
+
+
+        $.ajax({
+            method: "POST",
+            url: "../api/Employee",
+            type: "json",
+            data : emp
+        }).done(function (response,statusText,jqxhr) {
+            console.log(response);
+            console.log(statusText);
+            console.log(jqxhr);
+
+            if(jqxhr.status==201) // created olmuş ise
+            {
+                LoadEmployees(); 
+            }
+            console.log("status:"+jqxhr.status);
+            console.log("statusText:"+jqxhr.statusText);
+            console.log("location:"+jqxhr.getResponseHeader("location"));
+
+
+        }).fail(function () {
+            alert("Employee eklenirken bir hata oluştu");
+        });
+
+    }
+
+    //Sayfa yüklendiğini belirtmek için $function yazılır
+    $(function () {
+        LoadEmployees(); // Sayfa yüklendiğinde çalışacak
+
+        $("#btnCreate").click(function () {
+            CreateEmployee();
+        });
+    });
+
+
+</script>
+
