@@ -42,4 +42,3 @@ C:\Users\BARIS\Documents\Visual Studio 2015\Projects\WebAPILearning\WebAPILearni
 C:\Users\BARIS\Documents\Visual Studio 2015\Projects\WebAPILearning\WebAPILearning.Crud\bin\System.Web.Http.WebHost.xml
 C:\Users\BARIS\Documents\Visual Studio 2015\Projects\WebAPILearning\WebAPILearning.Crud\obj\Debug\WebAPILearning.Crud.dll
 C:\Users\BARIS\Documents\Visual Studio 2015\Projects\WebAPILearning\WebAPILearning.Crud\obj\Debug\WebAPILearning.Crud.pdb
-C:\Users\BARIS\Documents\Visual Studio 2015\Projects\WebAPILearning\WebAPILearning.Crud\obj\Debug\WebAPILearning.Crud.csprojResolveAssemblyReference.cache

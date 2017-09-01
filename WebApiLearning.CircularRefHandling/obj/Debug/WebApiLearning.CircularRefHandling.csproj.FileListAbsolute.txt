@@ -55,4 +55,3 @@ C:\Users\BARIS\Documents\Visual Studio 2015\Projects\WebAPILearning\WebApiLearni
 C:\Users\BARIS\Documents\Visual Studio 2015\Projects\WebAPILearning\WebApiLearning.CircularRefHandling\bin\System.Web.Http.WebHost.xml
 C:\Users\BARIS\Documents\Visual Studio 2015\Projects\WebAPILearning\WebApiLearning.CircularRefHandling\obj\Debug\WebApiLearning.CircularRefHandling.dll
 C:\Users\BARIS\Documents\Visual Studio 2015\Projects\WebAPILearning\WebApiLearning.CircularRefHandling\obj\Debug\WebApiLearning.CircularRefHandling.pdb
-C:\Users\BARIS\Documents\Visual Studio 2015\Projects\WebAPILearning\WebApiLearning.CircularRefHandling\obj\Debug\WebApiLearning.CircularRefHandling.csprojResolveAssemblyReference.cache

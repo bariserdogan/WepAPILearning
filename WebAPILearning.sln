@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApiLearning.CircularRefH
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApiJqueryUsing", "WebApiJqueryUsing\WebApiJqueryUsing.csproj", "{146EC7C5-67CF-46A0-AA76-5927EDE672BF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebAPILearning.ModelValidationExample", "WebAPILearning.ModelValidationExample\WebAPILearning.ModelValidationExample.csproj", "{0CC4D1B1-1631-4784-9D2A-6820B0CD837E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{146EC7C5-67CF-46A0-AA76-5927EDE672BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{146EC7C5-67CF-46A0-AA76-5927EDE672BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{146EC7C5-67CF-46A0-AA76-5927EDE672BF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0CC4D1B1-1631-4784-9D2A-6820B0CD837E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0CC4D1B1-1631-4784-9D2A-6820B0CD837E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0CC4D1B1-1631-4784-9D2A-6820B0CD837E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0CC4D1B1-1631-4784-9D2A-6820B0CD837E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
